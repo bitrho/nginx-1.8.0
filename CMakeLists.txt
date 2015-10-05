@@ -274,6 +274,8 @@ src/event/modules
 src/http
 src/http/modules
 src/http/modules/perl
-src/mail)
+src/mail
+/Users/bitrho/code/pcre-8.37
+/Users/bitrho/code/zlib-1.2.8)
 
 add_executable(nginx_1_8_0 ${SOURCE_FILES})
