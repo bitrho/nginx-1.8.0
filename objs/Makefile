@@ -104,6 +104,9 @@ HTTP_INCS = -I src/http \
 	-I src/http/modules
 
 
+ADDON_DEPS = $(CORE_DEPS)  $(HTTP_DEPS)
+
+
 objs/nginx:	objs/src/core/nginx.o \
 	objs/src/core/ngx_log.o \
 	objs/src/core/ngx_palloc.o \
@@ -215,6 +218,7 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/src/http/modules/ngx_http_upstream_ip_hash_module.o \
 	objs/src/http/modules/ngx_http_upstream_least_conn_module.o \
 	objs/src/http/modules/ngx_http_upstream_keepalive_module.o \
+	objs/addon/ext/ngx_http_hello_module.o \
 	objs/ngx_modules.o \
 	../pcre-8.37/.libs/libpcre.a \
 	../zlib-1.2.8/libz.a
@@ -331,6 +335,7 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/src/http/modules/ngx_http_upstream_ip_hash_module.o \
 	objs/src/http/modules/ngx_http_upstream_least_conn_module.o \
 	objs/src/http/modules/ngx_http_upstream_keepalive_module.o \
+	objs/addon/ext/ngx_http_hello_module.o \
 	objs/ngx_modules.o \
 	../pcre-8.37/.libs/libpcre.a -lssl -lcrypto ../zlib-1.2.8/libz.a
 	
@@ -1118,6 +1123,13 @@ objs/src/http/modules/ngx_http_upstream_keepalive_module.o:	$(CORE_DEPS) $(HTTP_
 	$(CC) -c $(CFLAGS) $(CORE_INCS) $(HTTP_INCS) \
 		-o objs/src/http/modules/ngx_http_upstream_keepalive_module.o \
 		src/http/modules/ngx_http_upstream_keepalive_module.c
+
+
+objs/addon/ext/ngx_http_hello_module.o:	$(ADDON_DEPS) \
+	/Users/bitrho/code/nginx-1.8.0/ext/ngx_http_hello_module.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/ext/ngx_http_hello_module.o \
+		/Users/bitrho/code/nginx-1.8.0/ext/ngx_http_hello_module.c
 
 
 ../pcre-8.37/pcre.h:	../pcre-8.37/Makefile

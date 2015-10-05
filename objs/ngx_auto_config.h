@@ -1,4 +1,4 @@
-#define NGX_CONFIGURE " --prefix=/Users/bitrho/code/nginx-1.8.0/build --sbin-path=/Users/bitrho/code/nginx-1.8.0/build/nginx --conf-path=/Users/bitrho/code/nginx-1.8.0/build/nginx.conf --pid-path=/Users/bitrho/code/nginx-1.8.0/build/nginx.pid --with-http_ssl_module --with-pcre=../pcre-8.37 --with-zlib=../zlib-1.2.8"
+#define NGX_CONFIGURE " --prefix=/Users/bitrho/code/nginx-1.8.0/build --sbin-path=/Users/bitrho/code/nginx-1.8.0/build/nginx --conf-path=/Users/bitrho/code/nginx-1.8.0/build/nginx.conf --pid-path=/Users/bitrho/code/nginx-1.8.0/build/nginx.pid --with-http_ssl_module --with-pcre=../pcre-8.37 --with-zlib=../zlib-1.2.8 --add-module=/Users/bitrho/code/nginx-1.8.0/ext"
 
 #ifndef NGX_COMPILER
 #define NGX_COMPILER  "clang 6.1.0 (clang-602.0.53) (based on LLVM 3.6.0svn)"
